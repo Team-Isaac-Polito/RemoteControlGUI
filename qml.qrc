@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/Remote.png</file>
+        <file>MyRange.qml</file>
+    </qresource>
+</RCC>
