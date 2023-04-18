@@ -36,11 +36,11 @@ void QNode::m_BatteryVoltage1_Callback(const std_msgs::msg::Int32::SharedPtr msg
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_sx1_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_sx1 = (msg->data/1.3)+50;
+    this->motor_speed_sx1 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_dx1_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_dx1 = (msg->data/1.3)+50;
+    this->motor_speed_dx1 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
 //second module
@@ -49,11 +49,11 @@ void QNode::m_BatteryVoltage2_Callback(const std_msgs::msg::Int32::SharedPtr msg
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_sx2_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_sx2 = (msg->data/1.3)+50;
+    this->motor_speed_sx2 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_dx2_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_dx2 = (msg->data/1.3)+50;
+    this->motor_speed_dx2 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
 //third module
@@ -62,10 +62,10 @@ void QNode::m_BatteryVoltage3_Callback(const std_msgs::msg::Int32::SharedPtr msg
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_sx3_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_sx3 = (msg->data/1.3)+50;
+    this->motor_speed_sx3 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
 void QNode::m_MotorSpeed_dx3_Callback(const std_msgs::msg::Float32::SharedPtr msg){
-    this->motor_speed_dx3 = (msg->data/1.3)+50;
+    this->motor_speed_dx3 = (-msg->data/1.3)+50;
     Q_EMIT this->msgSubscribed();
 }
