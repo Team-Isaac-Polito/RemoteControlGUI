@@ -42,7 +42,8 @@ int main(int argc, char *argv[])
 
     BackEnd backEnd(argc, argv, item);
     view.rootContext()->setContextProperty("backEnd", &backEnd);
-    view.showFullScreen();
+    view.show();
+    //view.showFullScreen();
 
     backendTry(&backEnd);
 

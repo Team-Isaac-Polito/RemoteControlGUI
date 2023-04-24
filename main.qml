@@ -18,6 +18,15 @@ Rectangle {
         source: "images/Remote.png"
     }
 
+    /* Button {
+        id: exitBtn
+        x: 0
+        y: 0
+        text: "X"
+        background: Rectangle{color:"red"}
+        onClicked: ;
+    }*/
+
     //first module
     Text {
         id: battery1
