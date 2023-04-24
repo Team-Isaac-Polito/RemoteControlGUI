@@ -15,15 +15,15 @@ QNode::QNode(int argc, char** argv, QObject *parent)
     //first module
     m_BatteryVoltage1_Sub = m_RosNode->create_subscription<std_msgs::msg::Int32>("/battery_head", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_BatteryVoltage1_Callback,this,std::placeholders::_1));
     m_MotorSpeed_sx1_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_head_left", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_sx1_Callback,this,std::placeholders::_1));
-    m_MotorSpeed_dx1_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/temperature", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_dx1_Callback,this,std::placeholders::_1));
+    m_MotorSpeed_dx1_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_head_right", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_dx1_Callback,this,std::placeholders::_1));
     //second module
     m_BatteryVoltage2_Sub = m_RosNode->create_subscription<std_msgs::msg::Int32>("/battery_middle", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_BatteryVoltage2_Callback,this,std::placeholders::_1));
     m_MotorSpeed_sx2_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_middle_left", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_sx2_Callback,this,std::placeholders::_1));
     m_MotorSpeed_dx2_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_middle_right", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_dx2_Callback,this,std::placeholders::_1));
     //third module
-    m_BatteryVoltage2_Sub = m_RosNode->create_subscription<std_msgs::msg::Int32>("/battery_tail", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_BatteryVoltage3_Callback,this,std::placeholders::_1));
-    m_MotorSpeed_sx2_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_tail_left", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_sx3_Callback,this,std::placeholders::_1));
-    m_MotorSpeed_dx2_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_tail_right", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_dx3_Callback,this,std::placeholders::_1));
+    m_BatteryVoltage3_Sub = m_RosNode->create_subscription<std_msgs::msg::Int32>("/battery_tail", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_BatteryVoltage3_Callback,this,std::placeholders::_1));
+    m_MotorSpeed_sx3_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_tail_left", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_sx3_Callback,this,std::placeholders::_1));
+    m_MotorSpeed_dx3_Sub = m_RosNode->create_subscription<std_msgs::msg::Float32>("/w_measure_tail_right", rclcpp::SystemDefaultsQoS(), std::bind(&QNode::m_MotorSpeed_dx3_Callback,this,std::placeholders::_1));
 
 
     std::thread executor_thread(std::bind(&rclcpp::executors::StaticSingleThreadedExecutor::spin, rosExecutor));
